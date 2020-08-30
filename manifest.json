@@ -1,0 +1,21 @@
+{
+    "name": "MTB map Monti Livornesi",
+    "short_name": "MTBmapML",
+    "start_url": ".",
+    "background_color": "#248f24",
+    "theme_color": "#248f24",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "data/raster/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "data/raster/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
