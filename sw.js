@@ -1,8 +1,8 @@
-const staticCacheName = 'site-static';
+const staticCacheName = "site-static-v1";
 const assets = [
     '/',
     '/index.html',
-    '/index.js',
+    '/app.js',
     '/main.js',
     '/style.css',
     'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css',
@@ -13,7 +13,7 @@ const assets = [
 
 // install service worker
 self.addEventListener('install', evt => {
-    //console.log('service worker has been installed');
+    console.log('service worker has been installed');
     evt.waitUntil( 
         caches.open(staticCacheName).then(cache => {
             console.log('caching shell assets');
@@ -25,7 +25,16 @@ self.addEventListener('install', evt => {
 
 // activate event
 self.addEventListener('activate', evt => {
-
+    // console.log('service worker has been activated');
+    evt.waitUntil(
+        caches.keys().then(keys => {
+            // console.log(keys);
+            return Promise.all(keys
+                .filter(key => key !== staticCacheName)
+                .map(key => caches.delete(key))
+            )
+        })
+    );
 });
 
 // fetch event
