@@ -1,10 +1,9 @@
 const staticCacheName = "site-static-v1";
 const assets = [
-    '/',
-    '/index.html',
-    '/app.js',
-    '/main.js',
-    '/style.css',
+    'index.html',
+    'app.js',
+    'main.js',
+    'style.css',
     'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css',
     'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js',
     'https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.1/proj4.js',
