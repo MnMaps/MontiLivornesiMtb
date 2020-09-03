@@ -1,5 +1,6 @@
 const staticCacheName = "site-static-v1";
 const assets = [
+    '/testPWA/',
     '/testPWA/index.html',
     '/testPWA/app.js',
     '/testPWA/main.js',
