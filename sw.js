@@ -25,7 +25,8 @@ const assets = [
     'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css',
     'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js',
     'https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.1/proj4.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.1/proj4-src.js'
+    'https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.1/proj4-src.js',
+    'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
 // install service worker
