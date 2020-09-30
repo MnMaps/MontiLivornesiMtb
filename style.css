@@ -13,3 +13,151 @@
     left: 30%;
     margin-left: -90px;
   }
+
+#locationBtnImg{
+  width: 20px;
+  height: 20px;
+}
+
+#location{
+  z-index: 10;
+}
+
+#locationImg{
+  width: 10px;
+  height: 10px;
+}
+
+.navbar{
+  height: 10vh;
+  width: 100vw;
+}
+
+.map{
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+}
+
+#locationBtn{
+  position: absolute;
+  /*top: 50px;
+  left: 90px;*/
+  z-index: 9;
+  background-color: rgba(230, 230, 230, 0.6);
+  left: 1vw; 
+  top: 90%; 
+  border-radius: 3.5px;
+  border: 3px solid  rgba(230, 230, 230, 0.6);
+}
+
+#locationBtn:hover {
+  border: 3px solid  rgba(245, 245, 245, 0.7);
+  background-color: rgba(245, 245, 245, 0.7);
+}
+
+#locationBtnImg{
+  margin: 3.5px;
+}
+
+#locationDiv {
+  border-radius: 1px;
+  background-color: rgba(55, 219, 66, 1);
+}
+
+#locationDiv:hover {
+  border-radius: 1px;
+  background-color: rgba(200, 100, 44, 1);
+}
+
+.ol-control button{
+  background-color: rgba(55, 219, 66, 1);
+}
+  
+.ol-control button:hover{
+  background-color: rgba(200, 100, 44, 1);
+}
+
+.ol-zoom {
+  left: 1vw;
+}
+
+.onoffContainer{
+  position: absolute;
+  top: 90%;
+  right: 1vw;
+  z-index: 9;
+  background-color:  rgba(230, 230, 230, 0.6);
+  border-radius: 3.5px;
+  border: 3px solid  rgba(230, 230, 230, 0.6);
+}
+
+.onoffContainer:hover{
+  background-color: rgba(245, 245, 245, 0.7);
+  border: 3px solid  rgba(245, 245, 245, 0.7);
+}
+
+.onoffContainer > .off {
+  margin: 2px;
+  float: left;
+  background-color: rgba(55, 219, 66, 1);
+  border-radius: 3px;
+}
+
+.onoffContainer > .on {
+  margin: 2px;
+  float: left;
+  background-color: rgba(200, 100, 44, 1);
+  border-radius: 3px;
+}
+
+.onoffContainer > a:hover{
+  background-color: rgba(200, 100, 44, 1);
+}
+
+
+.SPviola{
+  margin: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(209, 0, 181, 1);
+  border: 2px solid wheat;
+}
+
+.SPverde{
+  margin: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(42, 168, 25, 1);
+  border: 2px solid wheat;
+
+}
+
+.SPblu{
+  margin: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(28, 208, 232, 1);
+  border: 2px solid wheat;
+}
+
+.SProsso{
+  margin: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(242, 25, 10, 1);
+  border: 2px solid wheat;
+}
+
+.SPnero{
+  margin: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(23, 22, 22, 1);
+  border: 2px solid wheat;
+}

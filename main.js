@@ -6,6 +6,7 @@ const attributionControl = new ol.control.Attribution({
 
 function init(){
 
+
 //EPSG Code: for Italy
 proj4.defs("EPSG:3003","+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs");
 ol.proj.proj4.register(proj4);
@@ -14,6 +15,7 @@ ol.proj.proj4.register(proj4);
         view: new ol.View({
             center: [1613326.4816979854, 4818379.7166935075],
             zoom: 11,
+            extent: [1603254.394, 4804178.414, 1623254.394, 4828928.414],
             projection: 'EPSG:3003'
         }),
         target:'js-map',
@@ -67,7 +69,7 @@ ol.proj.proj4.register(proj4);
       visible: true,
       title: 'StartStop',
       minZoom: 14,
-      zIndex: 4,
+      zIndex: 5,
       style: StartStopStyle
     })
 
@@ -152,7 +154,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'MTB',
-        zIndex: 0,
+        zIndex: 1,
         minZoom: 13,
         style: featureMTB
       })
@@ -202,7 +204,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'NumberedPath',
-        zIndex: 3,
+        zIndex: 4,
         minZoom: 13,
         style: NumberedPathStyle
       })
@@ -217,7 +219,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'NumberedPathNoNumber',
-        zIndex: 2,
+        zIndex: 3,
         style: new ol.style.Style({
           stroke: new ol.style.Stroke({
             color: [237, 36, 36, 1],
@@ -271,7 +273,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'ooPath',
-        zIndex: 3,
+        zIndex: 4,
         minZoom: 13,
         style: ooPathStyle
       })
@@ -285,7 +287,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'ooPath',
-        zIndex: 2,
+        zIndex: 3,
         style: new ol.style.Style({
           stroke: new ol.style.Stroke({
             color: [237, 36, 36, 1],
@@ -306,7 +308,7 @@ ol.proj.proj4.register(proj4);
         }),
         visible: true,
         title: 'PathTrack',
-        zIndex: 1,
+        zIndex: 2,
         style: new ol.style.Style({
           stroke: new ol.style.Stroke({
             color: [237, 36, 36, 1],
@@ -366,7 +368,7 @@ ol.proj.proj4.register(proj4);
       element: overlayContainerElement
     })
     map.addOverlay(overlayLayer);
-    //connct a js const to html span
+    //connect a js const to html span
     const overlayMTBname = document.getElementById('MTB-track-name');
 
     // PopUp logic
@@ -405,11 +407,116 @@ ol.proj.proj4.register(proj4);
     projection: viewProjection
   })
 
-  const geolocationElement = document.getElementById('geolocation');
+  //crea l'overlay con il simbolo della posizione
+  const marker = new ol.Overlay({
+    element: document.getElementById('location'),
+    positioning: 'center-center'
+  })
+  map.addOverlay(marker);
+  
+  //posiziona l'overlay con il simbolo della posizione
   geolocation.on('change:position', function(e){
     let geolocation = this.getPosition();
-    let LongLatGeolocation = ol.proj.toLonLat(geolocation, viewProjection);
-    map.getView().setCenter(geolocation);
-    geolocationElement.innerHTML = 'Long:' + LongLatGeolocation[0].toFixed(3) + ', ' + 'Lat:' + LongLatGeolocation[1].toFixed(3)
+    marker.setPosition(geolocation);
   })
+
+  //posiziona il centro della carta sulla posizione attuale
+  document.getElementById('locationBtn').addEventListener('click', function(e){
+    console.log('clickedBtn');
+    console.log(geolocation.getPosition())
+    let actualCoordinate = geolocation.getPosition();
+    map.getView().setCenter(actualCoordinate);
+  })
+
+  //Lithing logic
+  // onstyle
+   const onStyle = function(feature){
+    const styles = [
+      new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: [255, 255, 255, 0.8],
+          width: 10,
+          lineCap: 'round',
+          lineJoint: 'round'
+        })
+      })
+    ]
+    return styles
+  }
+
+  // offstyle
+  const offStyle = function(feature){
+    const styles = [
+      new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: [255, 255, 255, 0.0],
+          width: 10,
+          lineCap: 'round',
+          lineJoint: 'round'
+        })
+      })
+    ]
+    return styles
+  }
+
+  const onoffMTB = new ol.layer.VectorImage({
+    source: new ol.source.Vector({
+      url: './data/vector/onoffMtb.geojson',
+      format: new ol.format.GeoJSON({
+        dataProjection: 'EPSG:3003'
+      })
+    }),
+    visible: true,
+    title: 'onoffMtb',
+    zIndex: 0,
+    minZoom: 13,
+    style: offStyle
+  })
+  map.addLayer(onoffMTB);
+
+
+//Navigationbar logic
+  const anchorNavElements = document.querySelectorAll('.onoffContainer > a');
+  for(let anchorNavElement of anchorNavElements){
+    anchorNavElement.addEventListener('click', function(e){
+      let clickedAnchorElement = e.currentTarget;
+      let clickedAnchorElementID = clickedAnchorElement.id;
+      let clickedAnchorElementClass = clickedAnchorElement.className;
+      let allMtbFeature = onoffMTB.getSource().getFeatures();
+      console.log('a clicked');
+      allMtbFeature.forEach(function(feature){
+        feature.setStyle(offStyle);
+      })
+
+       if(clickedAnchorElementClass === 'on'){
+          clickedAnchorElement.className = clickedAnchorElement.className.replace('on', 'off');
+        }else{
+          let allAnchorElements = document.querySelectorAll('.onoffContainer > a');
+          allAnchorElements.forEach(element =>{
+            element.className = 'off'
+          });
+          clickedAnchorElement.className = 'on';
+          console.log(allAnchorElements);
+          allMtbFeature.forEach(function(feature){
+            let featureMtbColor = feature.get('Colore');
+            if(clickedAnchorElementID === featureMtbColor){
+              feature.setStyle(onStyle);
+            }
+          })
+        }
+    })
+  }
+
+  map.on('singleclick', function(e){
+    let allMtbFeature = onoffMTB.getSource().getFeatures();
+    allMtbFeature.forEach(function(feature){
+      feature.setStyle(offStyle);
+    })
+    let allAnchorElements = document.querySelectorAll('.onoffContainer > a');
+          allAnchorElements.forEach(element =>{
+            element.className = 'off'
+          });
+  })
+
+
 }

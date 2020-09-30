@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#248f24">
+    <title>CL-desktop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css">
+  <link rel="stylesheet" href="/style.css">
+  <!-- materialize icons, css, js -->
+  <link rel="stylesheet" href="/materialize/css/materialize.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+</head>
+<body class="green lighten-5">
+
+  <!-- Top navbar -->
+<div class="navbar-fixed">
+  <nav class="z-depth-0 lime darken-3">
+    <div class="navbar nav-wrapper container">
+      <a href="/" class="grey-text text-lighten-4" style="font-weight: bold; font-size: 4vw;">Livorno Hike & MTB</a>
+      <span class="right grey-text text-darken-4">
+        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>
+    </div>
+  </nav>  
+</div>
+
+  <!-- Side navbar -->
+  <ul id="side-menu" class="sidenav side-menu">
+    <li><a class="subheader">MNMaps</a></li>
+    <li><a href="/" class="waves-effect">Mappa</a></li>
+    <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/pages/contact.html" class="waves-effect">
+      <i class="material-icons">mail-outline</i>Contact</a>
+    </li>
+  </ul>
+
+  <div style="position: relative; margin-bottom: 5px;">
+    <h6 style="font-weight: bold; margin-left: 5px;">MnMaps</h6>
+    <p style="text-align: justify; text-justify: inter-word; margin-left: 5px; margin-right: 6px;">
+      MnMaps è un progetto in via di evoluzione con obbiettivo la reralizzazione di cartografie
+      che descrivano i territori, gli sport e le passioni.
+      Se apprezzate il lavoro di MnMaps, visitate la nostra pagina Facebook e lasciate un like.
+      <a href="https://www.facebook.com/MNMaps-101855198121463/?view_public_for=101855198121463" target="_blank" style="position: absolute; right: 5px; top: 88%;">
+        <img src="./fbIcon.png" alt="fbIcon" style="width: 15vw;">
+      </a>
+    </p>
+  </div>
+  <div class="divider"></div>
+  <div style="position: relative; margin-bottom: 5px;">
+    <h6 style="font-weight: bold; margin-left: 5px;">L'Applicazione</h6>
+    <p style="text-align: justify; text-justify: inter-word; margin-left: 5px; margin-right: 6px;">
+      L'applicazione "Monti Livornesi in MTB" nasce dalla passione per questi luoghi,
+      dove è possibile misurarsi a piedi, camminando o correndo, e soprattutto in sella ad una
+      MTB. Nasce inoltre dalla passione per la natura, il territorio e dalla voglia di realizzare 
+      una cartografia dei percorsi che permettesse di sfruttare a pieno le potenzialità dell'area.
+      Questa è un'applicazione completamente "made in garage" che si è basata su programmi, librerie 
+      e piattaforme OpenSource (QGis, OpenStreetMap, Openlayers, Materialize e GitHub) e soprattuto sul tempo 
+      rubato ad altri impegni. Le passioni sono belle perchè possono essere condivise, per questo è 
+      stato scelto di rendere l'applicazione scaricabile gratuitamente.
+    </p>
+  </div>
+  <div class="divider"></div>
+
+
+  <script src="/sidenav.js"></script>
+</body>
+</html>
