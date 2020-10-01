@@ -9,7 +9,7 @@ const assets = [
     '/testPWA/pages/about.html',
     '/testPWA/pages/contact.html',
     '/testPWA/pages/fbIcon.png',
-    '/testPWA/pagesf/bMessIcon.png',
+    '/testPWA/pages/fbMessIcon.png',
     '/testPWA/data/raster/location.png',
     '/testPWA/data/raster/locationBtn.png',
     '/testPWA/data/raster/MappaGiu.png',
