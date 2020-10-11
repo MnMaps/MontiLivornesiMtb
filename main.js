@@ -61,7 +61,7 @@ ol.proj.proj4.register(proj4);
 
     const StartStop = new ol.layer.VectorImage({
       source: new ol.source.Vector({
-        url: './data/vector/StartStop3003.geojson',
+        url: '/MontiLivornesiMtb/data/vector/StartStop3003.geojson',
         format: new ol.format.GeoJSON({
           dataProjection: 'EPSG:3003'
         })
@@ -147,7 +147,7 @@ ol.proj.proj4.register(proj4);
       // MTB Track
       const MTBTrack = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/MTB.geojson',
+          url: '/MontiLivornesiMtb/data/vector/MTB.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -197,7 +197,7 @@ ol.proj.proj4.register(proj4);
 
       const NumberedPathWithNumber = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/NumberedPathFull3003.geojson',
+          url: '/MontiLivornesiMtb/data/vector/NumberedPathFull3003.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -212,7 +212,7 @@ ol.proj.proj4.register(proj4);
   
       const NumberedPathNoNumber = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/NumberedPathFull3003.geojson',
+          url: '/MontiLivornesiMtb/data/vector/NumberedPathFull3003.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -266,7 +266,7 @@ ol.proj.proj4.register(proj4);
 
       const ooPath = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/00Path3003.geojson',
+          url: '/MontiLivornesiMtb/data/vector/00Path3003.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -280,7 +280,7 @@ ol.proj.proj4.register(proj4);
 
       const ooPathNoNumber = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/00Path3003.geojson',
+          url: '/MontiLivornesiMtb/data/vector/00Path3003.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -301,7 +301,7 @@ ol.proj.proj4.register(proj4);
       
       const PathTrack = new ol.layer.VectorImage({
         source: new ol.source.Vector({
-          url: './data/vector/PathTrack3003.geojson',
+          url: '/MontiLivornesiMtb/data/vector/PathTrack3003.geojson',
           format: new ol.format.GeoJSON({
             dataProjection: 'EPSG:3003'
           })
@@ -326,7 +326,7 @@ ol.proj.proj4.register(proj4);
 
     const MappaSU = new ol.layer.Image({
         source: new ol.source.ImageStatic({
-            url: './data/raster/MappaSu.png',
+            url: '/MontiLivornesiMtb/data/raster/MappaSu.png',
             //imageExtent: [1603234.394, 4816553.414, 1623234.394, 4828928.414]
             imageExtent: [1603254.394, 4816553.414, 1623254.394, 4828928.414]
         }),
@@ -337,7 +337,7 @@ ol.proj.proj4.register(proj4);
 
     const MappaGIU = new ol.layer.Image({
         source: new ol.source.ImageStatic({
-            url: './data/raster/MappaGiu.png',
+            url: '/MontiLivornesiMtb/data/raster/MappaGiu.png',
             //imageExtent: [1603234.394, 4804178.414, 1623234.394, 4816553.414]
             imageExtent: [1603254.394, 4804178.414, 1623254.394, 4816553.414]
         }),
@@ -461,7 +461,7 @@ ol.proj.proj4.register(proj4);
 
   const onoffMTB = new ol.layer.VectorImage({
     source: new ol.source.Vector({
-      url: './data/vector/onoffMtb.geojson',
+      url: '/MontiLivornesiMtb/data/vector/onoffMtb.geojson',
       format: new ol.format.GeoJSON({
         dataProjection: 'EPSG:3003'
       })
